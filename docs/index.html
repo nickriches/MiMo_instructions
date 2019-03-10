@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Nick Riches" />
+
+
+<title>index.utf8.md</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p><img src="mimo.png" /></p>
+<div id="welcome-to-the-mimo-language-analysis-tool" class="section level1">
+<h1>Welcome to the MiMo language analysis tool!</h1>
+<div id="what-is-mimo" class="section level2">
+<h2>What is MiMo?</h2>
+<p>The name MiMo stands for “Minimal Input, Maximal Output”.</p>
+<p><strong>Minimal Input</strong></p>
+<p>MiMo allows you to enter text <strong>quickly</strong> and <strong>efficiently</strong> without needing to learn special conventions.</p>
+<p><strong>Maximal Output</strong></p>
+<p>MiMo provides a <strong>rich output</strong>, automatically identifying complex sentences, and colouring in words according to their word class so you can ‘see’ the structure of sentences.</p>
+</div>
+<div id="other-reasons-for-using-mimo" class="section level2">
+<h2>Other reasons for using MiMo</h2>
+<ol style="list-style-type: decimal">
+<li><p>It is <strong>cross platform</strong>. Because it runs as a web app you can use it on Mac, PC and Linux, and even on mobile phones and tablets (Android and Apple iOS)</p></li>
+<li><p>It works in <strong>over 60 different languages</strong>. So if a child speaks Ancient Coptic, you know where to turn!</p></li>
+<li><p>It is completely <strong>open source</strong> so anyone with sufficient technical knowledge can adapt it to their own ends.</p></li>
+<li><p>It provides <strong>up-to-date norms</strong> from the <strong>Childes</strong> database</p></li>
+</ol>
+</div>
+<div id="viewing-these-help-pages" class="section level2">
+<h2>Viewing these help pages</h2>
+<p>If you wish to see a version of these help pages with a <em>handy navigation menu</em>, please click <a href="Rmarkdown_instructions.html">here</a>. You may also wish to download a <a href="Rmarkdown_instructions.docx">Word</a> and <a href="Rmarkdown_instructions.pdf">pdf</a> version of these help pages.</p>
+</div>
+<div id="brief-acknowledgements" class="section level2">
+<h2>Brief Acknowledgements</h2>
+<p>MiMO couldn’t have been writting without the R programming language, and the R Shiny Apps framework. See the end of the document for further acknowledgements.</p>
+</div>
+</div>
+<div id="basic-usage" class="section level1">
+<h1>Basic Usage</h1>
+<div id="entering-data" class="section level2">
+<h2>Entering data</h2>
+<ol style="list-style-type: decimal">
+<li><p>Select <code>Let's get started!</code> (at the top of the page) &gt; <code>(1) Enter text</code></p></li>
+<li><p>Click the Radio Button <code>Enter text in textbox</code>, and enter your text-to-be-analysed in the text box. Here is some text for you to copy and paste into the text box.</p></li>
+</ol>
+<blockquote>
+Tardigrades, also known colloquially as water bears, or moss piglets, are a phylum of water-dwelling, eight-legged, segmented micro-animals. They were first described by the German zoologist Johann August Ephraim Goeze in 1773, who gave them the name of “little water bears”. The name Tardigrada, meaning “slow steppers”, was given three years later by the Italian biologist Lazzaro Spallanzani.
+</blockquote>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Then select <code>Let's get started!</code> (at the top of the page) &gt; <code>(2) Check language</code></p></li>
+<li><p>If the language detected is correct (it <em>will</em> be correct if you enter the above text), proceed to <code>Let's explore!</code> &gt; <code>(2) Coloured output</code></p></li>
+<li><p>You should see a colourful table with word classes shaded according to their colour.</p></li>
+</ol>
+<div id="exploring-the-coloured-output" class="section level3">
+<h3>Exploring the coloured output</h3>
+<p>You can do a lot of cool things with the table.</p>
+</div>
+<div id="mouse-hovering" class="section level3">
+<h3>–Mouse hovering–</h3>
+<p>If you hover the mouse over a word, you will see a “tooltip” showing the grammatical category of that word</p>
+</div>
+<div id="filtering" class="section level3">
+<h3>–Filtering–</h3>
+<p>If you enter text in one of the boxes at the top, you can select (or “filter”) particular lines</p>
+<p>For example, if you type <code>.rel</code> in the Search bar it will find all sentences containing relative clauses, or if you type <code>copula</code> it will find sentences containing the copula (verb “to be” when used as the MAIN VERB)</p>
+</div>
+<div id="sorting" class="section level3">
+<h3>–Sorting–</h3>
+<p>You can also sort lines</p>
+<p>For example, if you scroll to the right and press <code>num_clause</code> you can sort the lines so that they are ranked in terms of the number of clauses they contain.</p>
+</div>
+</div>
+<div id="identifying-speakers" class="section level2">
+<h2>Identifying speakers</h2>
+<p>The above text on Tardigrades does not specify a speaker. Note that in the speaker column the “speaker” is specifed as <code>xxx:</code>, i.e. some unknown individual.</p>
+<p>If you wish to specify speakers, merely type a word at the beginning of an utterance which ends in a colon, e.g. <code>Jack: CHI: Mum: babysitter:</code>. Once you have specified a speaker then all the following lines are assumed to belong to that speaker <em>unless another speaker is specified</em>.</p>
+<p>Try entering the following conversation, in the text box, and then check the language.</p>
+<blockquote>
+CHI: Gimme that! ADULT: Can you say “Please”? CHI: Gimme please! ADULT: That’s right. Here you go. What do you think that is?
+</blockquote>
+<p>You will notice that the language detection doesn’t quite work. This is because the algorithm prioritises speed over accuracy. To set the right language, click on the radio button <code>Select another language</code> and then enter the name of the language (“English”) in the box (make sure you spell it correctly or the app will crash).</p>
+<p>Now have a look at the coloured output. You will see that the speakers have been added to the Speaker column.</p>
+</div>
+<div id="delimiting-utterances" class="section level2">
+<h2>Delimiting utterances</h2>
+<p>The following characters are utterance-final delimiters:</p>
+<ol style="list-style-type: decimal">
+<li>One or more periods (full stops) in a row</li>
+<li>One or more question marks in a row</li>
+<li>One or more exclamation marks in a row</li>
+<li>A return (new line) character</li>
+</ol>
+</div>
+</div>
+<div id="intermediate-use" class="section level1">
+<h1>Intermediate use</h1>
+<div id="uploading-documents" class="section level2">
+<h2>Uploading documents</h2>
+<p>You will note that the app gives you the opportunity to upload a document. You can upload a Microsoft Word format document (with the extension .doc, or docx) or a plain text file. Unfortunately R cannot recognise other formats (e.g. .odt)</p>
+</div>
+<div id="language-metrics" class="section level2">
+<h2>Language metrics</h2>
+<p>This section is UNDER CONSTRUCTION. To get an idea of what is planned go to <code>Let's explore!</code> &gt; <code>(2) Syntactic measures</code>. You will see a report of Mean Length of Utterances (in words), and Mean Number of Clauses per Utterance for each speaker.</p>
+<p>If you select the <code>Collection</code> drop down you can choose a corpus from the CHILDES database to investigate. A graph will appear showing the CHILDES data, with a line of best fit. You can change the age range use the sliders on the left.</p>
+<p>The plan is that the user can specify the child’s age (see Calendar widgets on the left), and that child will be plotted as a data point on the graph.</p>
+</div>
+</div>
+<div id="road-map" class="section level1">
+<h1>Road Map</h1>
+<p>The app is still in its early stages. The final version of the app wil be able to do the following</p>
+<ol style="list-style-type: decimal">
+<li><p>Calculate important metrics (Mean Length of Utterance (MLU) in words and morphemes, lexical diversity (VOC-D), an mean number of clauses per utterance)</p></li>
+<li><p>Compare those metrics to a large normative database derived from the CHILDES corpus.</p></li>
+<li><p>Show developmental norms in an interactive graph, so you can see where an individual lies in relation to their age group.</p></li>
+<li><p>Allow you to make comments (which are not analysed for word class), and create your own custom-made tags for conducting your own analyses on things which interest you.</p></li>
+<li><p>Analyse conversational interaction.</p></li>
+<li><p>Print off a report of all the metrics.</p></li>
+</ol>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
