@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ![](mimo.png)
 
-# Welcome to the MiMo language analysis tool!
+# Welcome to the MiMo language analysis tool!!
 
 ## What is MiMo?
 
